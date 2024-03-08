@@ -23,9 +23,10 @@ class StudentRequest extends FormRequest
     {
         return [
             'name_student'=>'bail|required|alpha',
+            'lastname_student'=>'bail|required|alpha',
             'id_student'=>'bail|required|digits:8',
-            'email_student'=>'bail|required|email',
-            'password_student'=>'bail|required|between:5,20',
+            'birthday' => 'bail|required|date', 
+            'comments' => 'bail|required|string',
         ];
     }
 }

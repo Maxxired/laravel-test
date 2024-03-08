@@ -78,7 +78,7 @@ class StudentController extends Controller
             'name_student' => $validatedData['name_student'],
             'lastname_student' => $validatedData['lastname_student'],
             'id_student' => $validatedData['id_student'],
-            'birthday' => $validatedData['birthdate'],
+            'birthday' => $validatedData['birthday'],
             'comments' => $validatedData['comments'],
         ]);
     
