@@ -13,8 +13,6 @@
     <header>
         <div bg-[#F0F6FF] h-screen flex>
             <div class="flex">
-                <!-- Sidebar -->
-                <!-- Content -->
                 <div class="flex flex-col flex-grow">
                     <!-- Header -->
                     <nav class="fixed top-0 left-0 right-0 bg-[#ffffff] shadow-lg p-5">
@@ -27,7 +25,6 @@
                                 </div>
                                 <div
                                     class="mt-2 ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-500">
-                                    <!-- Replace with appropriate icon based on role -->
                                     <i class="text-white fas fa-code"></i>
                                 </div>
 
@@ -46,32 +43,21 @@
                 <div class="text-[#5D7285] text-lg font-semibold mb-4 ml-4 mt-24">
                     <!-- Conditional rendering based on role -->
                     <!-- Admin and Leader -->
-                    <a class="block mt-4 hover:text-[#376690] mr-4">
-                        <i class="mr-3 fas fa-house-user"></i>
+                    <a href="{{ route('estudiantes.index') }}" class="block mt-4 hover:text-[#376690] mr-4">
                         Inicio
                     </a>
-                    <a class="block mt-4 hover:text-[#376690] mr-4">
-                        <i class="mr-3 fas fa-diagram-project"></i>
-                        Proyectos
+                    <a href="{{ route('estudiantes.index') }}" class="block mt-4 hover:text-[#376690] mr-4">
+                        Estudiantes
                     </a>
-                    <a class="block mt-4 hover:text-[#376690] mr-4">
-                        <i class="mr-3 fas fa-tasks"></i>
-                        Tareas
+                    <a href="{{ route('estudiantes.create') }}" class="block mt-4 hover:text-[#376690] mr-4">
+                        Añadir 
                     </a>
-                    <a class="block mt-4 hover:text-[#376690] mr-4">
-                        <i class="mr-3 fas fa-folder-open"></i>
-                        Recursos
+                    <a href="{{ route('estudiantes.index') }}" class="block mt-4 hover:text-[#376690] mr-4">
+                        Materias
                     </a>
-                    <a class="block mt-4 hover:text-[#376690] mr-4">
-                        <i class="mr-3 fas fa-user-friends"></i>
-                        Equipo
-                    </a>
+                    
                 </div>
-                <button
-                    class="transform transition duration-300 hover:scale-110 p-2 text-white rounded-md bg-[#036EFF] font-semibold mt-auto"
-                    onclick="logOff()">
-                    Cerrar Sesión
-                </button>
+                
             </nav>
             @yield('contenido')
         </div>

@@ -23,10 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/estudiantes', StudentController::class);
-
-Route::get('/form-estudiantes', [StudentController::class, 'index']);
-Route::post('/form-estudiantes', [StudentController::class, 'store']);
+Route::resource('estudiantes', StudentController::class);
 
 Route::get('admin', function () {
    // acceso a un usuario autenticado
@@ -49,7 +46,7 @@ Route::get('/tilines/{matricula}', function ($matricula) {
 });*/
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('hola');
 });
 
 Route::get('/dashboard', function () {

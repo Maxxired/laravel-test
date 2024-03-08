@@ -42,7 +42,7 @@ class StudentController extends Controller
 
         $student->save();
 
-        return redirect()->route('students.index')->with('success', 'Estudiante registrado exitosamente');
+        return redirect()->route('estudiantes.index')->with('success', 'Estudiante registrado exitosamente');
     }
 
     /**
@@ -51,7 +51,7 @@ class StudentController extends Controller
     public function show($id)
     {
         $student = Student::find($id);
-        return view('CrudStudents.student', compact('student'));
+        return view('Students.studentdetail', compact('student'));
     }
 
     /**
@@ -61,7 +61,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
     
-        return view('CrudStudents.student-edit', compact('student'));
+        return view('Students.editstudent', compact('student'));
     }
     
     public function update(StudentRequest $request, $id)
@@ -71,18 +71,18 @@ class StudentController extends Controller
         $student = Student::find($id);
     
         if (!$student) {
-            return redirect()->route('students.index')->with('error', 'Estudiante no encontrado.');
+            return redirect()->route('estudiantes.index')->with('error', 'Estudiante no encontrado.');
         }
     
         $student->update([
             'name_student' => $validatedData['name_student'],
             'lastname_student' => $validatedData['lastname_student'],
             'id_student' => $validatedData['id_student'],
-            'birthdate' => $validatedData['birthdate'],
+            'birthday' => $validatedData['birthdate'],
             'comments' => $validatedData['comments'],
         ]);
     
-        return redirect()->route('students.index')->with('success', 'Estudiante registrado exitosamente');
+        return redirect()->route('estudiantes.index')->with('success', 'Estudiante registrado exitosamente');
     }
     
 
@@ -93,11 +93,11 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         if(!$student){
-            return redirect()->route('students.index')->with('error', 'Estudiante no encontrado.');
+            return redirect()->route('estudiantes.index')->with('error', 'Estudiante no encontrado.');
         }
 
         $student->delete();
-        return redirect()->route('students.index')->with('success', 'Estudiante eliminado exitosamente.');
+        return redirect()->route('estudiantes.index')->with('success', 'Estudiante eliminado exitosamente.');
 
     }
 }
