@@ -15,7 +15,7 @@ class StudentController extends Controller
     {
         // $students=Student::all();
         $students = Student::paginate(10);
-        return view('CrudStudents.students', compact('students'));
+        return view('Students.studentslist', compact('students'));
     }
 
     /**
@@ -23,7 +23,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view("CrudStudents.form");
+        return view("Students.formstudent");
     }
 
     /**
@@ -36,7 +36,7 @@ class StudentController extends Controller
             'name_student' => $validatedData['name_student'],
             'lastname_student' => $validatedData['lastname_student'],
             'id_student' => $validatedData['id_student'],
-            'birthdate' => $validatedData['birthdate'],
+            'birthday' => $validatedData['birthday'],
             'comments' => $validatedData['comments'],
         ]);
 

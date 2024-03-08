@@ -13,6 +13,10 @@
                 @error('name_student')
                     <div style='color:red'>{{$message}}</div>
                 @enderror
+                <input type="text" name='lastname_student' placeholder="Apellido" value="{{old('lastname_student')}}" class="w-full border-gray-300 rounded-md p-2">
+                @error('lastname_student')
+                    <div style='color:red'>{{$message}}</div>
+                @enderror
                 <input type="text" name='id_student' placeholder="Matricula" value="{{old('id_student')}}" class="w-full border-gray-300 rounded-md p-2">
                 @error('id_student')
                     <div style='color:red'>{{$message}}</div>
